@@ -1,0 +1,40 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule ^assets/(.*)$ web/assets/$1 [L]
+RewriteRule ^css/(.*)$ web/css/$1 [L]
+RewriteRule ^js/(.*)$ web/js/$1 [L]
+RewriteRule ^img/(.*)$ web/img/$1 [L]
+RewriteRule (.*) web/$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . web/index.php
+
+# Extra Security Headers
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options nosniff
+    Header set Content-Security-Policy "default-src 'self' 'unsafe-inline'  https://ecard.ajmanbank.ae https://fonts.gstatic.com/ https://code.jquery.com https://fonts.googleapis.com;"
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+    Header set Permissions-Policy "accelerometer=Origin(), autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=(), usb=()"
+    
+    Header unset Server
+    Header always unset Server
+    
+# Header set Content-Security-Policy "default-src 'self' 'unsafe-inline' https://ecard.ajmanbank.ae https://fonts.gstatic.com https://code.jquery.com https://fonts.googleapis.com;"
+# Header set Content-Security-Policy "connect-src 'self' www.google-analytics.com https://ampcid.google.com https://stats.g.doubleclick.net/j/collect;"
+# Header set Content-Security-Policy "font-src data: fonts.gstatic.com;"
+# Header set Content-Security-Policy "frame-src https://www.facebook.com www.googletagmanager.com https://www.linkedin.com https://player.vimeo.com/video/ youtube.com www.youtube.com;"
+# Header set Content-Security-Policy "img-src data: geo0.ggpht.com geo1.ggpht.com geo2.ggpht.com geo3.ggpht.com lh3.ggpht.com lh4.ggpht.com lh5.ggpht.com lh6.ggpht.com www.google-analytics.com https://www.google.com/ads/ga-audiences http://cbk0.googleapis.com https://cbks0.googleapis.com http://khm0.googleapis.com http://khm1.googleapis.com https://khms0.googleapis.com https://khms1.googleapis.com maps.googleapis.com www.googletagmanager.com maps.gstatic.com ssl.gstatic.com www.gstatic.com stats.g.doubleclick.net/r/;"
+# Header set Content-Security-Policy "script-src 'self' 'unsafe-eval' 'unsafe-inline' google-analytics.com https://ssl.google-analytics.com www.google-analytics.com tagmanager.google.com ajax.googleapis.com/ajax/libs/jquery/ maps.googleapis.com googletagmanager.com www.googletagmanager.com code.jquery.com platform.linkedin.com https://www.linkedin.com https://player.vimeo.com/api/ stats.g.doubleclick.net https://connect.facebook.net;"
+# Header set Content-Security-Policy "style-src 'self' tagmanager.google.com ajax.googleapis.com/ajax/libs/jqueryui/ fonts.googleapis.com code.jquery.com;"
+</IfModule>
+
+
+ServerSignature Off

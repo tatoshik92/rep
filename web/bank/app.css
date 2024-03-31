@@ -1,0 +1,176 @@
+@import url(font/stylesheet.css);
+
+body,html{
+    margin:0px;
+    padding: 0px;
+    font-family: 'DaxlinePro';
+    background: #1c1c1c;
+    color: #fff;
+}
+
+.wrap{
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+.logo{
+    margin: 40px 0px;
+    text-align: center;
+}
+
+.logo img{
+    max-width: 60%;
+}
+
+.add_c{
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.add_c__btn{
+    font-family: 'DaxlinePro';
+    width: 100%;
+    display: block;
+    border: 2px solid #fff;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.add_c__btn span{
+    display: block;
+    font-size: 20px;
+    line-height: 1.5;
+    background: #aa302f;
+    border: 5px solid #1c1c1c;
+    border-radius: 15px;
+    padding: 5px 0px;
+}
+
+.profile{}
+
+.profile__avatar{
+    max-width: 60%;
+    border-radius: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.profile__avatar img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+
+.profile__name{
+    text-align: center;
+    font-family: 'DaxlinePro';
+    font-size: 25px;
+    margin-top: 20px;
+    border-bottom: 2px solid #e5e3e1;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+.profile__name__role{
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.contact{
+    margin-top: 20px;;
+}
+
+.contact__item{
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #fff;
+}
+
+.contact__item__value{
+    font-size: 20px;
+    flex: 1;
+}
+
+.contact__item__value__title{
+    font-size: 18px;
+    color: #a4a3a4;
+    letter-spacing: 7px;
+}
+
+.contact__item__icon{
+    width: 50px;
+    border: 1px solid #c3c0bc;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.contact__item__icon svg{
+    width: 20px;
+}
+
+.contact__item__icon svg path{
+    fill: #fff;
+}
+
+.smm__wrap{
+    padding-top: 50px;
+}
+
+.smm__wrap__title{
+    font-size: 18px;
+    color: #a4a3a4;
+    letter-spacing: 7px;
+    padding-bottom: 20px;;
+}
+
+.smm{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* .smm::after{
+    content: '';
+    width: 50%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+} */
+
+.smm a{
+    margin-right: 10px;
+    margin-bottom: 10px;;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #fff;
+}
+
+.smm a img,.smm a svg{
+    max-width: 50%;
+    max-height: 50%;
+}
