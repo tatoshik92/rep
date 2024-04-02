@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
-    $_SERVER['DOCUMENT_ROOT'] = '/Users/antonvelicko/Downloads/archiveftWlB/';
+    $_SERVER['DOCUMENT_ROOT'] = '/Users/antonvelicko/Downloads/archiveftWlB/rep/';
 }
 
 ini_set('display_errors', 'Off');

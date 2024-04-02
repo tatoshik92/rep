@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -20,11 +21,12 @@ class AssetsAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        '/tpl/css/style.min.css',
+        '/adnok/font/stylesheet.css',
+        '/adnok/css/style.min.css',
     ];
 
     public $js = [
-        '/tpl/js/script.min.js',
+        '/adnok/js/script.min.js',
     ];
 
     public $depends = [];

@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "ADNOC Sans Light";
+    src:          url("ADNOC Sans Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ADNOC Sans Regular";
+    src:          url("ADNOC Sans Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ADNOC Sans Medium";
+    src:          url("ADNOC Sans Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ADNOC Sans Bold";
+    src:          url("ADNOC Sans Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ADNOC Sans XBold";
+    src:          url("ADNOC Sans XBold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
