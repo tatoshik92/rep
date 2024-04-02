@@ -364,6 +364,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     function smmFields($type)
     {
+        return $props = Props::find()->asArray()->where(['user_id' => $this->id, 'type' => $type])->all();
     }
 
 

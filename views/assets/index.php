@@ -1,5 +1,19 @@
 <?php
 $this->title = $user->getTranslate(Yii::$app->t->lang['id'], 'firstName', $user->firstName) . ' ' . $user->getTranslate(Yii::$app->t->lang['id'], 'lastName', $user->lastName) . (!empty($user->company) ? ' | ' . $user->company->getTranslate(Yii::$app->t->lang['id'], 'name', $user->company->name) : '');
+
+
+$wats = $user->smmFields('whatsapp');
+$watsval = false;
+if (count($wats) > 0) {
+    $watsval = $wats[0]['value'];
+}
+
+$linked = $user->smmFields('linkedin');
+$linkedval = false;
+if (count($linked) > 0) {
+    $linkedval = $linked[0]['value'];
+}
+
 ?>
 
 <div class="page">
@@ -31,15 +45,19 @@ $this->title = $user->getTranslate(Yii::$app->t->lang['id'], 'firstName', $user-
         </div>
         <div class="header__button">
             <a href="<?= $user->vCard ?>" class="header__button-add">Add Contact</a>
-            <a href="" class="header__button-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
-                    <rect x="0.5" y="0.5" width="43" height="43" rx="15.5" stroke="#E7EBEF" />
-                    <path d="M17.6 30.0002H14.2V19.3001H17.6V30.0002ZM15.9 17.8001C14.8 17.8001 14 17 14 15.9C14 14.8 14.9 14 15.9 14C17 14 17.8 14.8 17.8 15.9C17.8 17 17 17.8001 15.9 17.8001ZM30 30.0002H26.6V24.2001C26.6 22.5001 25.9 22.0001 24.9 22.0001C23.9 22.0001 22.9 22.8001 22.9 24.3001V30.0002H19.5V19.3001H22.7V20.8001C23 20.1001 24.2 19.0001 25.9 19.0001C27.8 19.0001 29.8 20.1001 29.8 23.4001V30.0002H30Z" fill="#0077B5" />
-                </svg>
-            </a>
-            <a href="" class="header__button-link">
-                <img src="/adnok/img/icon-wa.png">
-            </a>
+            <? if ($linkedval) { ?>
+                <a href="<?= $linkedval ?>" class="header__button-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                        <rect x="0.5" y="0.5" width="43" height="43" rx="15.5" stroke="#E7EBEF" />
+                        <path d="M17.6 30.0002H14.2V19.3001H17.6V30.0002ZM15.9 17.8001C14.8 17.8001 14 17 14 15.9C14 14.8 14.9 14 15.9 14C17 14 17.8 14.8 17.8 15.9C17.8 17 17 17.8001 15.9 17.8001ZM30 30.0002H26.6V24.2001C26.6 22.5001 25.9 22.0001 24.9 22.0001C23.9 22.0001 22.9 22.8001 22.9 24.3001V30.0002H19.5V19.3001H22.7V20.8001C23 20.1001 24.2 19.0001 25.9 19.0001C27.8 19.0001 29.8 20.1001 29.8 23.4001V30.0002H30Z" fill="#0077B5" />
+                    </svg>
+                </a>
+            <? } ?>
+            <? if ($watsval) { ?>
+                <a href="<?= $watsval ?>" class="header__button-link">
+                    <img src="/adnok/img/icon-wa.png">
+                </a>
+            <? } ?>
         </div>
     </header>
 
