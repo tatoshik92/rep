@@ -362,6 +362,13 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
 
+    function smmFields($type)
+    {
+    }
+
+
+
+
     /*
 
     function beforeSave($insert){
